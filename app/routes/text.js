@@ -4,10 +4,9 @@ import ENV from 'ember-giphy/config/environment';
 
 const gf = new GiphyFetch(ENV.GIPHY_API_KEY);
 
-export default class IndexRoute extends Route {
-
+export default class TextRoute extends Route {
   async model() {
-    return this.getItems('gifs');
+    return this.getItems('text');
   }
   async getItems(itemType = 'gifs') {
     //type: gifs / stickers / text
@@ -15,5 +14,4 @@ export default class IndexRoute extends Route {
     console.log(tGifs);
     return tGifs.data;
   }
-  
 }

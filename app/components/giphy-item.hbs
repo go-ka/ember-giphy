@@ -1,11 +1,15 @@
 <button class="item {{if this.expanded 'expanded'}}" {{on 'click' this.toggleSize}}>
   {{#if this.expanded}}
-  <video src="{{@item.images.original_mp4.mp4}}" autoplay loop></video>
-  <p class="title">{{@item.title}}</p>
+    {{#if @item.is_sticker}}
+      <img src="{{@item.images.original.webp}}" alt="{{@item.title}}">
+    {{else}}
+      <video src="{{@item.images.original_mp4.mp4}}" autoplay loop></video>
+    {{/if}}
+    <p class="title">{{@item.title}}</p>
   {{else}}
-  <img class="{{if this.loaded '' 'hidden'}}" src="{{if this.expanded @item.images.downsized_large.webp @item.images.fixed_height_small.webp}}" alt="{{@item.title}}" {{on 'load' this.setLoaded}}>
-  <img class="{{if this.loaded 'hidden'}}" src="{{@item.images.fixed_height_small_still.url}}" alt="{{@item.title}}">
-  <div class="layer"></div>
+    <img class="{{if this.loaded '' 'hidden'}}" src="{{if this.expanded @item.images.downsized_large.webp @item.images.fixed_height_small.webp}}" alt="{{@item.title}}" {{on 'load' this.setLoaded}}>
+    <img class="{{if this.loaded 'hidden'}}" src="{{@item.images.fixed_height_small_still.url}}" alt="{{@item.title}}">
+    <div class="layer"></div>
   {{/if}}
   <p class="click">Click to {{if this.expanded 'Close' 'Expand'}}</p>
 </button>

@@ -13,7 +13,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone https://github.com/go-ka/ember-giphy
+* `git clone https://github.com/go-ka/ember-giphy`
 * `cd ember-giphy`
 * `npm install`
 
