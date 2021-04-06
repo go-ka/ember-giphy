@@ -1,0 +1,138 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 1.4;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1em;
+  color: #222;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+img,
+video {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+header {
+  text-align: center;
+  background-color: #fff;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.3em;
+  font-style: italic;
+  font-weight: 900;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 3.5em;
+  }
+}
+
+h1 span {
+  color: #e17;
+}
+
+main {
+  padding: 2rem 1rem;
+}
+
+.items-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  max-width: 50rem;
+}
+
+.item {
+  position: relative;
+  outline: none;
+  border: none;
+  padding: 0;
+  background: none;
+  color: #fff;
+}
+
+.item.expanded {
+  width: 100%;
+  padding-top: 1rem;
+}
+
+@media (min-width: 800px) {
+  .item.expanded {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.item.expanded .click {
+  bottom: auto;
+  top: 1rem;
+}
+
+.item .title {
+  margin: .8rem 0;
+  font-size: 1.5rem;
+  color: #f8b;
+}
+
+.item .layer,
+.item .click {
+  position: absolute;
+}
+
+.item .layer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  background-color: rgba(238, 17, 119, 0.9);
+  mix-blend-mode: color;
+  -webkit-transition: height 300ms ease;
+  transition: height 300ms ease;
+}
+
+.item .click {
+  bottom: .5rem;
+  opacity: 0;
+  margin: 0;
+  width: 100%;
+  padding: 0 .3rem;
+  text-align: center;
+  -webkit-transition: opacity 400ms;
+  transition: opacity 400ms;
+  font-weight: 700;
+  text-shadow: 1px 2px 1px #000;
+}
+
+.item:hover .layer {
+  height: 100%;
+}
+
+.item:hover .click {
+  opacity: 1;
+}
+/*# sourceMappingURL=app.css.map */

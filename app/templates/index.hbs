@@ -1,0 +1,10 @@
+{{!-- <nav>
+  <a href="#" {{on 'click' (fn this.changeType 'gifs')}}>gifs</a>
+  <a href="#" {{on 'click' (fn this.changeType 'stickers')}}>stickers</a>
+  <a href="#" {{on 'click' (fn this.changeType 'text')}}>text</a>
+</nav> --}}
+<div class="items-container">
+  {{#each @model as |item|}}
+    <GiphyItem @item={{item}} />
+  {{/each}}
+</div>

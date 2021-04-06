@@ -47,5 +47,7 @@ module.exports = function (environment) {
     // here you can enable a production-specific feature
   }
 
+  ENV.GIPHY_API_KEY = '9uOC9hn39LYgTfEOkdS6aRFMoTllCXdF';
+
   return ENV;
 };

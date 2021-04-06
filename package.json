@@ -65,5 +65,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "@giphy/js-fetch-api": "^2.4.0"
   }
 }
