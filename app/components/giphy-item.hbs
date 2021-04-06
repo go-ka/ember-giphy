@@ -7,7 +7,7 @@
     {{/if}}
     <p class="title">{{@item.title}}</p>
   {{else}}
-    <img class="{{if this.loaded '' 'hidden'}}" src="{{if this.expanded @item.images.downsized_large.webp @item.images.fixed_height_small.webp}}" alt="{{@item.title}}" {{on 'load' this.setLoaded}}>
+    <img class="{{if this.loaded '' 'hidden'}}" src="{{@item.images.fixed_height_small.webp}}" alt="{{@item.title}}" {{on 'load' this.setLoaded}}>
     <img class="{{if this.loaded 'hidden'}}" src="{{@item.images.fixed_height_small_still.url}}" alt="{{@item.title}}">
     <div class="layer"></div>
   {{/if}}

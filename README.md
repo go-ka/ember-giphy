@@ -1,6 +1,6 @@
 # ember-giphy
 
-SoapBox Giphy Project
+Ember Giphy Project  
 A page where trending gifs can be spotted.
 
 ## Prerequisites
