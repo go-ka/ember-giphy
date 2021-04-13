@@ -1,6 +1,7 @@
 {{page-title "Stickers"}}
 <div class="items-container">
-  {{#each @model as |item|}}
+  {{#each this.model as |item|}}
     <GiphyItem @item={{item}} />
   {{/each}}
 </div>
+{{!-- <button type="button" {{on 'click' (fn this.loadMoreItems 'stickers')}}>LOAD MORE</button> --}}

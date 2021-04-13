@@ -9,9 +9,7 @@ export default class TextRoute extends Route {
     return this.getItems('text');
   }
   async getItems(itemType = 'gifs') {
-    //type: gifs / stickers / text
     const tGifs = await gf.trending({ type: itemType, limit: 25, offset: 0, rating: 'g' });
-    console.log(tGifs);
     return tGifs.data;
   }
 }
