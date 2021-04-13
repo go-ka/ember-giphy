@@ -128,6 +128,10 @@ main {
   margin: auto;
   max-width: 50rem;
 }
+@keyframes zoomin {
+  from {transform: scale(.6);}
+  to {transform: scale(1);}
+}
 .item {
   position: relative;
   outline: none;
@@ -138,6 +142,10 @@ main {
   &.expanded {
     width: 100%;
     padding-top: 1rem;
+    animation-name: zoomin;
+    animation-duration: 200ms;
+    animation-delay: 100ms;
+    animation-fill-mode: both;
     @include min8 {
       padding-top: 2rem;
       padding-bottom: 1rem;
@@ -189,4 +197,13 @@ main {
       opacity: 1;
     }
   }
+}
+
+.btn-more {
+  display: block;
+  border: none;
+  margin: 1rem auto 0;
+  font-weight: 900;
+  background: none;
+  color: #fff;
 }

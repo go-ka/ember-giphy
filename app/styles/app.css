@@ -86,6 +86,28 @@ main {
   max-width: 50rem;
 }
 
+@-webkit-keyframes zoomin {
+  from {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoomin {
+  from {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .item {
   position: relative;
   outline: none;
@@ -98,6 +120,14 @@ main {
 .item.expanded {
   width: 100%;
   padding-top: 1rem;
+  -webkit-animation-name: zoomin;
+          animation-name: zoomin;
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms;
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 @media (min-width: 800px) {
@@ -153,5 +183,14 @@ main {
 
 .item:hover .click {
   opacity: 1;
+}
+
+.btn-more {
+  display: block;
+  border: none;
+  margin: 1rem auto 0;
+  font-weight: 900;
+  background: none;
+  color: #fff;
 }
 /*# sourceMappingURL=app.css.map */
