@@ -1,6 +1,13 @@
 {{page-title "Gifs"}}
+<label for="gifs-filter">Gifs Filter</label>
+<Input 
+  @id="gifs-filter"
+  @type="text"
+  @value={{this.gifsFilterValue}}
+  {{on "keyup" this.filterGifs}}
+/>
 <div class="items-container">
-  {{#each @model as |item|}}
+  {{#each this.filteredGifs as |item|}}
     <GiphyItem @item={{item}} />
   {{/each}}
 </div>

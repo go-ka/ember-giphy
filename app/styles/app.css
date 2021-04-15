@@ -71,6 +71,15 @@ nav span {
 
 main {
   padding: 2rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+#gifs-filter {
+  margin-left: .5rem;
+  margin-bottom: 1rem;
+  border-radius: .3rem;
+  padding: .3rem .5rem;
 }
 
 .items-container {
@@ -86,6 +95,28 @@ main {
   max-width: 50rem;
 }
 
+@-webkit-keyframes zoomin {
+  from {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoomin {
+  from {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .item {
   position: relative;
   outline: none;
@@ -98,6 +129,14 @@ main {
 .item.expanded {
   width: 100%;
   padding-top: 1rem;
+  -webkit-animation-name: zoomin;
+          animation-name: zoomin;
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms;
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 @media (min-width: 800px) {

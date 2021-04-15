@@ -119,6 +119,15 @@ nav {
 
 main {
   padding: 2rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+#gifs-filter {
+  margin-left: .5rem;
+  margin-bottom: 1rem;
+  border-radius: .3rem;
+  padding: .3rem .5rem;
 }
 
 .items-container {
@@ -127,6 +136,10 @@ main {
   justify-content: center;
   margin: auto;
   max-width: 50rem;
+}
+@keyframes zoomin {
+  from {transform: scale(.6);}
+  to {transform: scale(1);}
 }
 .item {
   position: relative;
@@ -138,6 +151,10 @@ main {
   &.expanded {
     width: 100%;
     padding-top: 1rem;
+    animation-name: zoomin;
+    animation-duration: 200ms;
+    animation-delay: 100ms;
+    animation-fill-mode: both;
     @include min8 {
       padding-top: 2rem;
       padding-bottom: 1rem;
