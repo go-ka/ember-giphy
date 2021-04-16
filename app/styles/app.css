@@ -193,4 +193,18 @@ main {
 .item:hover .click {
   opacity: 1;
 }
+
+.btn-more {
+  display: block;
+  border: none;
+  margin: 1rem auto 0;
+  font-weight: 900;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-more:hover {
+  color: #e17;
+}
 /*# sourceMappingURL=app.css.map */

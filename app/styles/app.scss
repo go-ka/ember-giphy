@@ -3,6 +3,7 @@ $media8 : 800px;
 $media10 : 1100px;
 $media12 : 1230px;
 $media14 : 1400px;
+$pink: #e17;
 
 @mixin max6 {
   @media (max-width: #{$media6 - 1px}) {
@@ -99,7 +100,7 @@ h1 {
     font-size: 3.5em;
   }
   span {
-    color: #e17;
+    color: $pink;
   }
 }
 
@@ -137,6 +138,7 @@ main {
   margin: auto;
   max-width: 50rem;
 }
+
 @keyframes zoomin {
   from {transform: scale(.6);}
   to {transform: scale(1);}
@@ -205,5 +207,18 @@ main {
       // display: block;
       opacity: 1;
     }
+  }
+}
+
+.btn-more {
+  display: block;
+  border: none;
+  margin: 1rem auto 0;
+  font-weight: 900;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    color: $pink;
   }
 }

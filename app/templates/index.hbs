@@ -2,12 +2,14 @@
 <label for="gifs-filter">Gifs Filter</label>
 <Input 
   @id="gifs-filter"
-  @type="text"
+  @type="search"
   @value={{this.gifsFilterValue}}
   {{on "keyup" this.filterGifs}}
+  {{on "search" this.filterGifs}}
 />
 <div class="items-container">
   {{#each this.filteredGifs as |item|}}
     <GiphyItem @item={{item}} />
   {{/each}}
 </div>
+<button class="btn-more" type="button" {{on 'click' (fn this.loadMoreItems 'gifs')}}>LOAD MORE</button>
