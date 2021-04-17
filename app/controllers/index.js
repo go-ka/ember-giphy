@@ -1,15 +1,12 @@
 import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { GiphyFetch } from '@giphy/js-fetch-api';
-import ENV from 'ember-giphy/config/environment';
-
-const gf = new GiphyFetch(ENV.GIPHY_API_KEY);
+import { inject as service } from '@ember/service';
 
 export default class IndexController extends Controller {
   @tracked gifsFilterValue;
-  // model
   @tracked filteredGifs = this.model;
+  @service giphyFetch;
   offset = 1;
 
   @action filterGifs() {
@@ -19,14 +16,11 @@ export default class IndexController extends Controller {
   }
 
   @action async loadMoreItems(itemType = 'gifs') {
-    const gifs = await gf.trending({
-      type: itemType,
-      limit: 25,
-      offset: 25 * this.offset,
-      rating: 'g',
-    });
-    this.model.pushObjects(gifs.data);
-    this.filterGifs();
+    const newItems = await this.giphyFetch.getItems(itemType, this.offset);
+    this.model.pushObjects(newItems);
     this.offset++;
+    if (this.gifsFilterValue) {
+      this.filterGifs();
+    }
   }
 }
